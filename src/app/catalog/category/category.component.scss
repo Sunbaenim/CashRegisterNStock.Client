@@ -1,0 +1,10 @@
+.category-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.875rem;
+}
+app-product {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9375rem;
+    margin: 1.25rem 0;
+}

@@ -1,0 +1,13 @@
+<div class="modal" *ngIf="adminService.isModalVisible">
+    <div class="modal-content">
+        <div class="header-modal">
+            <img src="../../../assets/back-arrow.svg" alt="return back" (click)="closeModal()">
+            <img src="../../../assets/trash.svg" alt="trash" *ngIf="!isAdding" (click)="deleteFn()">
+        </div>
+        <div class="form-container">
+            <app-adding-form *ngIf="isAdding"></app-adding-form>
+            <app-category-update-form *ngIf="category" [category]="category"></app-category-update-form>
+            <app-product-update-form *ngIf="product" [product]="product"></app-product-update-form>
+        </div>
+    </div>
+</div>

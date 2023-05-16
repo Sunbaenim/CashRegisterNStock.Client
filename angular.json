@@ -85,12 +85,17 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app:build",
+            "host": "0.0.0.0"
+          },
           "configurations": {
             "production": {
               "browserTarget": "CashRegisterNStock.Client:build:production"
             },
             "development": {
-              "browserTarget": "CashRegisterNStock.Client:build:development"
+              "browserTarget": "CashRegisterNStock.Client:build:development",
+              "host": "0.0.0.0"
             }
           },
           "defaultConfiguration": "development"

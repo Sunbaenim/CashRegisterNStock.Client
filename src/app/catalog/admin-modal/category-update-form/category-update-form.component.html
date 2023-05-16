@@ -1,0 +1,13 @@
+<div class="form-container">
+    <form [formGroup]="categoryUpdateFormGroup" (ngSubmit)="onSubmitCategoryUpdate()">
+        <div>
+            <label>Nom :</label>
+            <input type="text" formControlName="name" required>
+            <div class="error-form" *ngIf="categoryUpdateFormGroup.get('name')?.invalid && (categoryUpdateFormGroup.get('name')?.dirty || categoryUpdateFormGroup.get('name')?.touched)">
+                <div *ngIf="categoryUpdateFormGroup.get('name')?.errors?.['required']">Le nom est requis.</div>
+                <div *ngIf="categoryUpdateFormGroup.get('name')?.errors?.['maxlength']">Le nom ne doit pas dépasser 30 caractères.</div>
+            </div>
+        </div>
+        <button type="submit">Sauvegarder</button>
+    </form>
+</div>

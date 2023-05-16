@@ -1,0 +1,74 @@
+<div class="form-container">
+    <select name="isProductSelect" id="isProductSelect" (change)="isProductSelect" #isProductSelect>
+        <option value="product">Produit</option>
+        <option value="category">Catégorie</option>
+    </select>
+    <form [formGroup]="productAddFormGroup" (ngSubmit)="onSubmitProductAdd()" *ngIf="isProductSelect.value === 'product'">
+        <div>
+            <label>Nom</label>
+            <input type="text" formControlName="name">
+            <div class="error-form" *ngIf="productAddFormGroup.get('name')?.invalid && (productAddFormGroup.get('name')?.dirty || productAddFormGroup.get('name')?.touched)">
+                <div *ngIf="productAddFormGroup.get('name')?.errors?.['required']">Le nom est requis.</div>
+                <div *ngIf="productAddFormGroup.get('name')?.errors?.['maxlength']">Le nom ne doit pas dépasser 15 caractères.</div>
+            </div>
+        </div>
+        <div>
+            <label>Description</label>
+            <input type="text" formControlName="description">
+            <div class="error-form" *ngIf="productAddFormGroup.get('description')?.invalid && (productAddFormGroup.get('description')?.dirty || productAddFormGroup.get('description')?.touched)">
+                <div *ngIf="productAddFormGroup.get('description')?.errors?.['required']">La description est requise.</div>
+                <div *ngIf="productAddFormGroup.get('description')?.errors?.['maxlength']">La description ne doit pas dépasser 15 caractères.</div>
+            </div>
+        </div>
+        <div>
+            <label>Categorie</label>
+            <select formControlName="categoryId">
+                <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
+            </select>
+            <div class="error-form" *ngIf="productAddFormGroup.get('categoryId')?.invalid && (productAddFormGroup.get('categoryId')?.dirty || productAddFormGroup.get('categoryId')?.touched)">
+                <div *ngIf="productAddFormGroup.get('categoryId')?.errors?.['required']">La catégorie est requise.</div>
+            </div>
+        </div>
+        <div>
+            <label>Prix</label>
+            <input type="text" formControlName="price">
+            <div class="error-form" *ngIf="productAddFormGroup.get('price')?.invalid && (productAddFormGroup.get('price')?.dirty || productAddFormGroup.get('price')?.touched)">
+                <div *ngIf="productAddFormGroup.get('price')?.errors?.['required']">Le prix est requis.</div>
+                <div *ngIf="productAddFormGroup.get('price')?.errors?.['min'] || productAddFormGroup.get('price')?.errors?.['max']">Le prix doit être compris entre 0.01 et 999.99.</div>
+            </div>
+        </div>
+        <div>
+            <label>Stock</label>
+            <input type="text" formControlName="stock">
+            <div class="error-form" *ngIf="productAddFormGroup.get('stock')?.invalid && (productAddFormGroup.get('stock')?.dirty || productAddFormGroup.get('stock')?.touched)">
+                <div *ngIf="productAddFormGroup.get('stock')?.errors?.['required']">Le stock est requis.</div>
+                <div *ngIf="productAddFormGroup.get('stock')?.errors?.['min']">Le stock doit être supérieur ou égal à 0.</div>
+            </div>
+        </div>
+        <div>
+            <label>Image</label>
+            <div class="input-image-container">
+                <input type="file" formControlName="imageUrl" (change)="loadFile($event)">
+                <img class="img-preview" *ngIf="imageBase64" class="img-preview" [src]="imageBase64" alt="Image Preview">
+            </div>
+            <div class="error-form" *ngIf="productAddFormGroup.get('imageUrl')?.invalid && (productAddFormGroup.get('imageUrl')?.dirty || productAddFormGroup.get('imageUrl')?.touched)">
+                <div *ngIf="productAddFormGroup.get('imageUrl')?.errors?.['required']">L'image est requise.</div>
+            </div>
+        </div>
+        <div>
+            <button type="submit">Ajouter</button>
+        </div>   
+    </form>
+
+    <form [formGroup]="categoryAddFormGroup" (ngSubmit)="onSubmitCategoryAdd()" *ngIf="isProductSelect.value === 'category'">
+        <div>
+            <label>Nom</label>
+            <input type="text" formControlName="name">
+            <div class="error-form"> *ngIf="categoryAddFormGroup.get('name')?.invalid && (categoryAddFormGroup.get('name')?.dirty || categoryAddFormGroup.get('name')?.touched)"
+                <div *ngIf="categoryAddFormGroup.get('name')?.errors?.['required']">Le nom est requis.</div>
+                <div *ngIf="categoryAddFormGroup.get('name')?.errors?.['maxlength']">Le nom ne doit pas dépasser 30 caractères.</div>
+            </div>
+        </div>
+        <button type="submit">Ajouter</button>
+    </form>
+</div>
