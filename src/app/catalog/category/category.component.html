@@ -1,5 +1,0 @@
-<div *ngFor="let category of categories" class="category-container">
-    <p class="category-name" (click)="adminMode && openModal(category)">{{category.name}}</p>
-    <hr>
-    <app-product [products]="category.products" [adminMode]="adminMode"></app-product>
-</div>
