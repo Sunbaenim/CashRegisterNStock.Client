@@ -21,9 +21,13 @@ main {
 }
 
 .product-image-container {
+    display: flex;
+    justify-content: center;
     width: 4.6875rem;
-    height: 4.6875rem;
     margin-right: 0.25rem;
+    img {
+        max-height: 4.6875rem;
+    }
 }
 
 .product-title {

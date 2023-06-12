@@ -1,5 +1,6 @@
 @import './styles/reset.scss';
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import './styles/variables.scss';
 
 header,
 .header-modal {
@@ -8,6 +9,9 @@ header,
     padding: 0 0.9375rem;
     height: 2rem;
     border-bottom: 1px solid #c4c4c4;
+    > img {
+        cursor: pointer;
+    }
 }
 
 hr {

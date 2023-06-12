@@ -1,6 +1,8 @@
+@import '../../../styles/variables.scss';
+
 .category-name {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.875rem;
+    // font-size: 0.875rem;
+    // font-size: $font-size-category;
 }
 app-product {
     display: flex;

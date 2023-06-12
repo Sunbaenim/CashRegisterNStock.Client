@@ -15,14 +15,14 @@ export class ResizeToFitDirective implements AfterViewInit {
   }
 
   checkElementWidth() {
-    const element = this.elementRef.nativeElement;
+    const element = this.elementRef.nativeElement;    
     const productBannerComputedStyle = getComputedStyle(element);
     const productBannerPadding = parseInt(productBannerComputedStyle.padding.split('px')[0]);
     const productBannerWidth = parseInt(productBannerComputedStyle.width.split('px')[0]);
     const productNameElement = element.firstChild;
     const productNameComputedStyle = getComputedStyle(productNameElement);
     const productNameTextWidth = parseInt(productNameComputedStyle.width.split('px')[0]);
-    const isProductNameTooBig = productBannerWidth - (productBannerPadding * 2) - productNameTextWidth - 1 < 0 ? true : false;
+    const isProductNameTooBig = productBannerWidth - (productBannerPadding * 3) - productNameTextWidth < 0 ? true : false;
     if (isProductNameTooBig) {
       this.changeFontSize(productNameElement);
     }
@@ -33,7 +33,7 @@ export class ResizeToFitDirective implements AfterViewInit {
     const productPriceElement = element.children[1].children[1];
     const productPriceComputedStyle = getComputedStyle(productPriceElement);
     const productPriceTextWidth = parseInt(productPriceComputedStyle.width.split('px')[0]);
-    const isProductDescTooBig = productBannerWidth - (productBannerPadding * 2) - productDescTextWidth - productPriceTextWidth - 2 < 0 ? true : false;
+    const isProductDescTooBig = productBannerWidth - (productBannerPadding * 4) - productDescTextWidth - productPriceTextWidth < 0 ? true : false;
     if (isProductDescTooBig) {
       this.changeFontSize(productDescElement);
     }

@@ -1,16 +1,16 @@
-<div *ngFor="let product of products" class="product-container"
+<div *ngFor="let product of products" class="product-container | product-size"
     [ngStyle]="{'background-image': 'url(' + baseUrl + product.imageUrl + ')'}"
     (click)="adminMode ? openModal(product) : product.stock > 0 ? addToCart(product) : ''"
     [ngClass]="{'out-of-stock': product.stock <= 0}">
-    <div *ngIf="adminMode" class="circle" [ngStyle]="{'backgroundColor': product.stock >= 20 ? 'green' : product.stock > 10 && product.stock < 20 ? 'orange' : 'red'}">
+    <div *ngIf="adminMode" class="circle | fs-circle circle-size" [ngStyle]="{'backgroundColor': product.stock >= 20 ? 'green' : product.stock > 10 && product.stock < 20 ? 'orange' : 'red'}">
         <p>{{product.stock}}</p>
     </div>
-    <div *ngIf="!adminMode && getQuantity(product) > 0" class="circle">
+    <div *ngIf="!adminMode && getQuantity(product) > 0" class="circle | fs-circle circle-size">
         <p>{{getQuantity(product)}}</p>
     </div>
-    <div class="product-banner" appResizeToFit>
-        <span class="product-name">{{product.name}}</span>
-        <div class="product-subheader">
+    <div class="product-banner | product-banner-height product-banner-padding" appResizeToFit>
+        <span class="product-name | fs-product-name">{{product.name}}</span>
+        <div class="product-subheader | fs-product-subheader">
             <span class="product-desc">{{product.description}}</span>
             <span class="product-price">{{product.price}}€</span>
         </div>

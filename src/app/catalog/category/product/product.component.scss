@@ -1,12 +1,14 @@
+@import '../../../../styles/variables.scss';
+
 .product-container {
     position: relative;
     display: flex;
     align-items: end;
-    width: 4.6875rem;
-    height: 4.6875rem;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    user-select: none;
+    cursor: pointer;
 }
 
 .product-container.out-of-stock::after {
@@ -26,8 +28,6 @@
     display: flex;
     justify-content: center;
     align-content: center;
-    width: 1.5rem;
-    height: 1.5rem;
     background-color: #3399fe;
     border-radius: 50%;
     transform: translateY(-50%);
@@ -43,8 +43,6 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    height: 1.875rem;
-    padding: 1px;
     background-color: rgba(0, 0, 0, 0.6);
     color: white;
     font-family: 'Roboto', sans-serif;
@@ -54,7 +52,6 @@
 }
 
 .product-name {
-    font-size: 0.875rem;
     font-weight: bold;
     line-height: 0.875rem;
 }
@@ -62,6 +59,5 @@
 .product-subheader {
     display: flex;
     justify-content: space-between;
-    font-size: 0.75rem;
     line-height: 0.75rem;
 }
