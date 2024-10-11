@@ -21,7 +21,7 @@
             </div>
         </div>
         <div>
-            <label>Categorie</label>
+            <label>Catégorie</label>
             <select formControlName="categoryId">
                 <option *ngFor="let category of categories" [value]="category.id">{{category.name}}</option>
             </select>
@@ -64,7 +64,7 @@
         <div>
             <label>Nom</label>
             <input type="text" formControlName="name">
-            <div class="error-form"> *ngIf="categoryAddFormGroup.get('name')?.invalid && (categoryAddFormGroup.get('name')?.dirty || categoryAddFormGroup.get('name')?.touched)"
+            <div class="error-form" *ngIf="categoryAddFormGroup.get('name')?.invalid && (categoryAddFormGroup.get('name')?.dirty || categoryAddFormGroup.get('name')?.touched)">
                 <div *ngIf="categoryAddFormGroup.get('name')?.errors?.['required']">Le nom est requis.</div>
                 <div *ngIf="categoryAddFormGroup.get('name')?.errors?.['maxlength']">Le nom ne doit pas dépasser 30 caractères.</div>
             </div>
