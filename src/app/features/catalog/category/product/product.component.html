@@ -1,0 +1,9 @@
+<div class="product-container" #productContainer [ngStyle]="{'background-image': 'url(' + baseUrl + product.imageUrl + ')', 'height': productContainer.clientWidth + 'px'}">
+    <div class="product-banner">
+        <span class="product-name" appReduceProductFontSize>{{product.name}}</span>
+        <div class="product-subheader" appReduceProductFontSize>
+            <span class="product-desc">{{product.description}}</span>
+            <span class="product-price">{{product.price}}€</span>
+        </div>
+    </div>
+</div>

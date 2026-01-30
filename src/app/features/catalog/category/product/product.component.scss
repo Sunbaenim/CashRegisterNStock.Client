@@ -1,0 +1,30 @@
+.product-container {
+    display: flex;
+    flex-direction: column-reverse;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.product-name {
+    width: fit-content;
+    font-weight: 600;
+}
+
+.product-banner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #00000099;
+    height: 2.5rem;
+    max-height: 40%;
+    padding: 0 0.125rem;
+    color: white;
+    text-wrap: nowrap;
+}
+
+.product-subheader {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5em;
+}

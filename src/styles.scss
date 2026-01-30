@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import './styles/reset.scss';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import './styles/variables.scss';
+
+header,
+.header-modal {
+    display: flex;
+    align-items: center;
+    padding: 0 0.9375rem;
+    height: 2rem;
+    border-bottom: 1px solid #c4c4c4;
+    > img {
+        cursor: pointer;
+    }
+}
+
+hr {
+    background-color: #c4c4c4;
+    height: 1px;
+    border: none;
+}
+
+button {
+    height: 2rem;
+    background-color: #3399fe;
+    border-radius: 0.3125rem;
+    border: none;
+    filter: drop-shadow(0 0.25rem 00.25rem rgba(0, 0, 0, 0.1));
+}
+
+* {
+    font-family: 'Roboto', sans-serif;
+}

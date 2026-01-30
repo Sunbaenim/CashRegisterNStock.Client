@@ -1,0 +1,94 @@
+/* FONT SIZE */
+
+$fs-100: 0.75rem;
+$fs-200: 0.875rem;
+$fs-300: 0.9375rem;
+$fs-400: 1rem;
+$fs-500: 1.125rem;
+$fs-600: 1.25rem;
+$fs-700: 1.5rem;
+$fs-800: 1.75rem;
+$fs-900: 2rem;
+
+$fs-category: $fs-200;
+$fs-product-name: $fs-200;
+$fs-product-subheader: $fs-100;
+$fs-circle: $fs-400;
+
+.fs-category {
+    font-size: $fs-category;
+}
+.fs-product-name {
+    font-size: $fs-product-name;
+}
+.fs-product-subheader {
+    font-size: $fs-product-subheader;
+}
+.fs-circle {
+    font-size: $fs-circle;
+}
+
+/* WIDTH & HEIGHT */
+
+$product-size: 4.6875rem;
+$product-banner-height: 1.875rem;
+$product-banner-padding: 1px;
+$circle-size: 1.5rem;
+
+.product-size {
+    width: $product-size;
+    height: $product-size;
+}
+.product-banner-height {
+    height: $product-banner-height;
+}
+.product-banner-padding {
+    padding: $product-banner-padding;
+}
+.circle-size {
+    width: $circle-size;
+    height: $circle-size;
+}
+
+@media (min-width: 768px) {
+    /* FONT SIZE */
+    $fs-category: $fs-500;
+    $fs-product-name: $fs-500;
+    $fs-product-subheader: $fs-400;
+    $fs-circle: $fs-600;
+
+    .fs-category {
+        font-size: $fs-category;
+    }
+    .fs-product-name {
+        font-size: $fs-product-name;
+    }
+    .fs-product-subheader {
+        font-size: $fs-product-subheader;
+    }
+    .fs-circle {
+        font-size: $fs-circle;
+    }
+
+    /* WIDTH & HEIGHT */
+
+    $product-size: 6rem;
+    $product-banner-height: 2.25rem;
+    $product-banner-padding: 0.15rem;
+    $circle-size: 2rem;
+
+    .product-size {
+        width: $product-size;
+        height: $product-size;
+    }
+    .product-banner-height {
+        height: $product-banner-height;
+    }
+    .product-banner-padding {
+        padding: $product-banner-padding;
+    }
+    .circle-size {
+        width: $circle-size;
+        height: $circle-size;
+    }
+}

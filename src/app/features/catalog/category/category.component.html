@@ -1,0 +1,6 @@
+<div class="category-container">
+    <p>{{category.name}}</p>
+    <div class="products" [ngStyle]="{'grid-template-columns': 'repeat(' + tilesPerRow + ', ' + test + 'px)', 'gap': 8 + 'px'}">
+        <app-product *ngFor="let product of category.products" [product]="product" />
+    </div>
+</div>
