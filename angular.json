@@ -48,10 +48,15 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+<<<<<<< HEAD
               {
                 "glob": "**/*",
                 "input": "public"
               }
+=======
+              "src/favicon.ico",
+              "src/assets"
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
             ],
             "styles": [
               "src/styles.scss"
@@ -63,6 +68,7 @@
               "budgets": [
                 {
                   "type": "initial",
+<<<<<<< HEAD
                   "maximumWarning": "500kB",
                   "maximumError": "1MB"
                 },
@@ -90,24 +96,65 @@
                   "with": "src/environments/environment.development.ts"
                 }
               ]
+=======
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
             }
           },
           "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+<<<<<<< HEAD
           "configurations": {
             "production": {
               "buildTarget": "CashRegisterNStock.Client:build:production"
             },
             "development": {
               "buildTarget": "CashRegisterNStock.Client:build:development"
+=======
+          "options": {
+            "browserTarget": "app:build",
+            "host": "0.0.0.0"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "CashRegisterNStock.Client:build:production"
+            },
+            "development": {
+              "browserTarget": "CashRegisterNStock.Client:build:development",
+              "host": "0.0.0.0"
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
             }
           },
           "defaultConfiguration": "development"
         },
         "extract-i18n": {
+<<<<<<< HEAD
           "builder": "@angular-devkit/build-angular:extract-i18n"
+=======
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "CashRegisterNStock.Client:build"
+          }
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
@@ -119,10 +166,15 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+<<<<<<< HEAD
               {
                 "glob": "**/*",
                 "input": "public"
               }
+=======
+              "src/favicon.ico",
+              "src/assets"
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
             ],
             "styles": [
               "src/styles.scss"
@@ -132,5 +184,11 @@
         }
       }
     }
+<<<<<<< HEAD
+=======
+  },
+  "cli": {
+    "analytics": false
+>>>>>>> d96b547fc4a65038883ca34c3a3f02f84241e581
   }
 }
